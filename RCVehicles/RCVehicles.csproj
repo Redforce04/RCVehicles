@@ -309,14 +309,19 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Components\PrimitiveInteractible.cs" />
         <Compile Include="EventArgs\DamagingVehicleEventArgs.cs" />
         <Compile Include="EventArgs\DestroyingVehicleEventArgs.cs" />
+        <Compile Include="EventArgs\EnteringVehicleEventArgs.cs" />
         <Compile Include="EventArgs\LeavingVehicleEventArgs.cs" />
         <Compile Include="EventArgs\ReloadingVehicleEventArgs.cs" />
         <Compile Include="EventArgs\RepairingVehicleEventArgs.cs" />
         <Compile Include="EventArgs\SpawningVehicleEventArgs.cs" />
         <Compile Include="EventArgs\StartingVehicleEventArgs.cs" />
+        <Compile Include="EventHandlers.cs" />
         <Compile Include="Events.cs" />
+        <Compile Include="Extensions\AbstractedTypeExtensions.cs" />
+        <Compile Include="Extensions\BitwiseExtensions.cs" />
         <Compile Include="Interfaces\IRemoteControlledVehicle.cs" />
         <Compile Include="Interfaces\RcVehicle.cs" />
         <Compile Include="Interfaces\Vehicle.cs" />

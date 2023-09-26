@@ -17,11 +17,22 @@ namespace RCVehicles.Interfaces;
 
 public class RcVehicle
 {
+    public static List<RcVehicle> Vehicles { get; private set; }
+
+    static RcVehicle()
+    {
+        Vehicles = new List<RcVehicle>();
+    }
+    
     public RcVehicle()
     {
-        PlayersBodies = new List<Npc>();
+        PlayersBodies = new Dictionary<Player, Npc>();
+        Vehicles.Add(this);
     }
-    private List<Npc> PlayersBodies { get; set; }
+    /// <summary>
+    /// A list of fake players who are controlling the vehicle.
+    /// </summary>
+    public Dictionary<Player,Npc> PlayersBodies { get; set; }
     
     /// <summary>
     /// Spawns an npc in a player's position. This allows other players to see the person "piloting" the rc vehicle.
@@ -32,7 +43,15 @@ public class RcVehicle
         // check for npc death, player death, player leave, etc...
         Npc npc = Npc.Spawn($"{(ply.HasCustomName ? ply.CustomName : ply.Nickname)}*", ply.Role, 0, "", ply.Position);
         npc.Transform.rotation = ply.Transform.rotation;
-        npc.
+    }
+
+    /// <summary>
+    /// Removes a player's NPC. 
+    /// </summary>
+    /// <param name="ply">The player to remove the npc from.</param>
+    public void RemovePlayer(Player ply)
+    {
+        
     }
     
     /// <summary>

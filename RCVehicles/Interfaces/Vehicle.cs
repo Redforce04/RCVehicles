@@ -11,37 +11,123 @@
 // -----------------------------------------
 
 using System.Collections.Generic;
+using System.Linq;
 using Exiled.API.Features;
 using Exiled.Events.Features;
+using MapEditorReborn.API.Features.Objects;
+using MapEditorReborn.API.Features.Serializable;
 using MapEditorReborn.Events.Handlers;
 using RCVehicles.EventArgs;
+using RCVehicles.Extensions;
+using MapEditorObject = MapEditorReborn.Events.Handlers.MapEditorObject;
 
 namespace RCVehicles.Interfaces
 {
     /// <summary>
-    /// The base class for a vehicle.
+    /// The base class for defining a vehicle.
     /// </summary>
-    public class Vehicle
+    public abstract class Vehicle
     {
+#region Static Items
+        static Vehicle()
+        {
+            RegisteredVehicles = new List<Vehicle>();
+        }
+    #region Static Properties
+        public static List<Vehicle> RegisteredVehicles { get; internal set; }
+    #endregion
+    #region Static Methods
+        /// <summary>
+        /// Registers all found instances of <see cref="Vehicle"/>
+        /// </summary>
+        public static void RegisterAllVehicles()
+        {
+            RegisteredVehicles = Extensions.AbstractedTypeExtensions.InstantiateAllInstancesOfType<Vehicle>();
+        }
+    #endregion
+#endregion
+#region Abstract API
+        /// <summary>
+        /// The name of the vehicle.
+        /// </summary>
+        public string Name { get; set; }
+        
+        /// <summary>
+        /// The author of the vehicle.
+        /// </summary>
+        public string Author { get; set; }
+
+        /// <summary>
+        /// The name of the schematic to load.
+        /// </summary>
+        public virtual string SchematicName => "";
+        
         /// <summary>
         /// The schematic for the vehicle.
         /// </summary>
-        public virtual Schematic Schematic { get; private set; }
-        
-        
+        public virtual SchematicSerializable Schematic => new SchematicSerializable(this.SchematicName);
+
         /// <summary>
-        /// Used to load the schematic.
+        /// How many players can be inside the vehicle.
         /// </summary>
-        public void LoadSchematic()
+        public virtual int MaxPlayerCount { get; set; } = 1; 
+        
+
+        /// <summary>
+        /// Allows or denies a player from entering a vehicle.
+        /// </summary>
+        /// <param name="vehicleObject">The instance of the <see cref="VehicleObject"/> that the player is trying to enter.</param>
+        /// <param name="ply">The <see cref="Player"/> trying to enter the vehicle.</param>
+        /// <returns>True if the player can enter the vehicle. False if the player is unable to enter the vehicle.</returns>
+        public bool CanPlayerEnterVehicle(VehicleObject vehicleObject, Player ply)
         {
+            // Ensure player is actually a player
+            if (ply.IsNPC || ply.IsHost)
+                return false;
             
+            // Ensure player is not in any other vehicles or owns any other vehicles.
+            if (VehicleObject.VehicleObjectInstances.Any(vehicle => 
+                    vehicle.PlayersRidingVehicle.Contains(ply) || vehicle.Owner == ply))
+                return false;
+                
+            // Ensure that there is enough room in the vehicle.
+            if (vehicleObject.PlayersRidingVehicle.Count >= MaxPlayerCount)
+                return false;
+
+            // Ensure the vehicle doesnt have custom logic.
+            if (!CanPlayerEnterVehicle(vehicleObject, ply))
+                return false;
+
+            // Run the event
+            EnteringVehicleEventArgs ev = new EnteringVehicleEventArgs(ply, vehicleObject);
+            Events.OnEnteringingVehicle(ev);
+            if (!ev.IsAllowed)
+                return false;
+            
+            return true;
         }
 
+        /// <summary>
+        /// Can be used to prevent players from entering a vehicle.
+        /// </summary>
+        /// <param name="vehicleObject">The instance of the <see cref="VehicleObject"/> that is being entered.</param>
+        /// <param name="ply">The <see cref="Player"/> who is attempting to enter the vehicle.</param>
+        /// <returns></returns>
+        protected virtual bool PlayerIsAbleToEnterVehicle(VehicleObject vehicleObject, Player ply)
+        {
+            return true;
+        }
+        
         /// <summary>
         /// Spawns the vehicle.
         /// </summary>
         public void SpawnVehicle(Player ply = null)
         {
+            // Null player means that the server is the owner.
+            if (ply is null)
+            {
+                ply = Server.Host;
+            }
             // Does player need prereqs to spawn the vehicle?
             if (!IsPlayerAllowedToSpawnVehicle())
             {
@@ -56,32 +142,25 @@ namespace RCVehicles.Interfaces
                 return;
             }
             
+            // Load the schematic
+            LoadSchematic();
+            
             // Does the player "become vehicle"
             if (this is IRemoteControlledVehicle rc)
             {
-                rc.RcVehicle.
+                if (!ply.IsNPC && !ply.IsHost)
+                {
+                    rc.RcVehicle.SpawnNPCForPlayer(ply);
+                }
             }
-            // Does an NPC need to be spawned on the player's location? ("remote control" - they aren't actually in it)
-            _internalSetPlayerAsVehicle();
             
             // Does a broadcast need to be issued?
-
         }
-
-        private void _setNPCInPlace()
-        {
-            
-        }
-        
 
         protected virtual bool IsPlayerAllowedToSpawnVehicle(Player ply = null)
         {
             return true;
         }
-        
-        
-        
-        
-        
+#endregion
     }
 }
