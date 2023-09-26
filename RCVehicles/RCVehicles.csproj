@@ -1,352 +1,101 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{3084E0B4-E397-434B-9025-296096B8AD08}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>RCVehicles</RootNamespace>
-        <AssemblyName>RCVehicles</AssemblyName>
-        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <LangVersion>default</LangVersion>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="0Harmony">
-          <HintPath>$(EXILED_References)\0Harmony.dll</HintPath>
-        </Reference>
-        <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\Assembly-CSharp-Publicized.dll</HintPath>
-        </Reference>
-        <Reference Include="CommandSystem.Core">
-          <HintPath>$(EXILED_References)\CommandSystem.Core.dll</HintPath>
-        </Reference>
-        <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\CommandSystem.Core.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.API, Version=8.2.1.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\Exiled.API.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.CreditTags, Version=8.2.1.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\Exiled.CreditTags.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.CustomItems, Version=8.2.1.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\Exiled.CustomItems.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.CustomRoles, Version=8.2.1.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\Exiled.CustomRoles.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.Events, Version=8.2.1.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\Exiled.Events.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.Loader, Version=8.2.1.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\Exiled.Loader.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.Permissions, Version=8.2.1.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\Exiled.Permissions.dll</HintPath>
-        </Reference>
-        <Reference Include="Exiled.Updater, Version=3.1.2.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\Exiled.Updater.dll</HintPath>
-        </Reference>
-        <Reference Include="MapEditorReborn">
-          <HintPath>$(EXILED_References)\MapEditorReborn.dll</HintPath>
-        </Reference>
-        <Reference Include="Mirror">
-          <HintPath>$(EXILED_References)\Mirror-Publicized.dll</HintPath>
-        </Reference>
-        <Reference Include="NorthwoodLib">
-          <HintPath>$(EXILED_References)\NorthwoodLib.dll</HintPath>
-        </Reference>
-        <Reference Include="NorthwoodLib, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\NorthwoodLib.dll</HintPath>
-        </Reference>
-        <Reference Include="NWAPIPermissionSystem">
-          <HintPath>$(EXILED_References)\NWAPIPermissionSystem.dll</HintPath>
-        </Reference>
-        <Reference Include="PluginAPI, Version=12.0.0.0, Culture=neutral, processorArchitecture=Amd64">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\PluginAPI.dll</HintPath>
-        </Reference>
-        <Reference Include="Pooling">
-          <HintPath>$(EXILED_References)\Pooling.dll</HintPath>
-        </Reference>
-        <Reference Include="SCPSLAudioApi">
-          <HintPath>$(EXILED_References)\SCPSLAudioApi.dll</HintPath>
-        </Reference>
-        <Reference Include="SemanticVersioning">
-          <HintPath>$(EXILED_References)\SemanticVersioning.dll</HintPath>
-        </Reference>
-        <Reference Include="System" />
-        <Reference Include="System.ComponentModel.DataAnnotations">
-          <HintPath>$(EXILED_References)\System.ComponentModel.DataAnnotations.dll</HintPath>
-        </Reference>
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Xml" />
-        <Reference Include="UnityEngine">
-          <HintPath>$(EXILED_References)\UnityEngine.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.AccessibilityModule">
-          <HintPath>$(EXILED_References)\UnityEngine.AccessibilityModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.AIModule">
-          <HintPath>$(EXILED_References)\UnityEngine.AIModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.AndroidJNIModule">
-          <HintPath>$(EXILED_References)\UnityEngine.AndroidJNIModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.AnimationModule">
-          <HintPath>$(EXILED_References)\UnityEngine.AnimationModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.AssetBundleModule">
-          <HintPath>$(EXILED_References)\UnityEngine.AssetBundleModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.AudioModule">
-          <HintPath>$(EXILED_References)\UnityEngine.AudioModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.ClothModule">
-          <HintPath>$(EXILED_References)\UnityEngine.ClothModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.ClusterInputModule">
-          <HintPath>$(EXILED_References)\UnityEngine.ClusterInputModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.ClusterRendererModule">
-          <HintPath>$(EXILED_References)\UnityEngine.ClusterRendererModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.CoreModule">
-          <HintPath>$(EXILED_References)\UnityEngine.CoreModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.CrashReportingModule">
-          <HintPath>$(EXILED_References)\UnityEngine.CrashReportingModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.DirectorModule">
-          <HintPath>$(EXILED_References)\UnityEngine.DirectorModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.DSPGraphModule">
-          <HintPath>$(EXILED_References)\UnityEngine.DSPGraphModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.GameCenterModule">
-          <HintPath>$(EXILED_References)\UnityEngine.GameCenterModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.GIModule">
-          <HintPath>$(EXILED_References)\UnityEngine.GIModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.GridModule">
-          <HintPath>$(EXILED_References)\UnityEngine.GridModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.HotReloadModule">
-          <HintPath>$(EXILED_References)\UnityEngine.HotReloadModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.ImageConversionModule">
-          <HintPath>$(EXILED_References)\UnityEngine.ImageConversionModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.IMGUIModule">
-          <HintPath>$(EXILED_References)\UnityEngine.IMGUIModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.InputLegacyModule">
-          <HintPath>$(EXILED_References)\UnityEngine.InputLegacyModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.InputModule">
-          <HintPath>$(EXILED_References)\UnityEngine.InputModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.JSONSerializeModule">
-          <HintPath>$(EXILED_References)\UnityEngine.JSONSerializeModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.LocalizationModule">
-          <HintPath>$(EXILED_References)\UnityEngine.LocalizationModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.ParticleSystemModule">
-          <HintPath>$(EXILED_References)\UnityEngine.ParticleSystemModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.PerformanceReportingModule">
-          <HintPath>$(EXILED_References)\UnityEngine.PerformanceReportingModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.Physics2DModule">
-          <HintPath>$(EXILED_References)\UnityEngine.Physics2DModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.PhysicsModule">
-          <HintPath>$(EXILED_References)\UnityEngine.PhysicsModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.ProfilerModule">
-          <HintPath>$(EXILED_References)\UnityEngine.ProfilerModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-          <HintPath>$(EXILED_References)\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.ScreenCaptureModule">
-          <HintPath>$(EXILED_References)\UnityEngine.ScreenCaptureModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.SharedInternalsModule">
-          <HintPath>$(EXILED_References)\UnityEngine.SharedInternalsModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.SpriteMaskModule">
-          <HintPath>$(EXILED_References)\UnityEngine.SpriteMaskModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.SpriteShapeModule">
-          <HintPath>$(EXILED_References)\UnityEngine.SpriteShapeModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.StreamingModule">
-          <HintPath>$(EXILED_References)\UnityEngine.StreamingModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.SubstanceModule">
-          <HintPath>$(EXILED_References)\UnityEngine.SubstanceModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.SubsystemsModule">
-          <HintPath>$(EXILED_References)\UnityEngine.SubsystemsModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.TerrainModule">
-          <HintPath>$(EXILED_References)\UnityEngine.TerrainModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.TerrainPhysicsModule">
-          <HintPath>$(EXILED_References)\UnityEngine.TerrainPhysicsModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.TextCoreFontEngineModule">
-          <HintPath>$(EXILED_References)\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.TextCoreTextEngineModule">
-          <HintPath>$(EXILED_References)\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.TextRenderingModule">
-          <HintPath>$(EXILED_References)\UnityEngine.TextRenderingModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.TilemapModule">
-          <HintPath>$(EXILED_References)\UnityEngine.TilemapModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.TLSModule">
-          <HintPath>$(EXILED_References)\UnityEngine.TLSModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UI">
-          <HintPath>$(EXILED_References)\UnityEngine.UI.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UIElementsModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UIElementsModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UIElementsNativeModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UIElementsNativeModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UIModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UIModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UmbraModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UmbraModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UNETModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UNETModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UnityAnalyticsModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UnityAnalyticsModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UnityConnectModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UnityConnectModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UnityCurlModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UnityCurlModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UnityTestProtocolModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UnityTestProtocolModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UnityWebRequestModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UnityWebRequestModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-          <HintPath>$(EXILED_References)\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.VehiclesModule">
-          <HintPath>$(EXILED_References)\UnityEngine.VehiclesModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.VFXModule">
-          <HintPath>$(EXILED_References)\UnityEngine.VFXModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.VideoModule">
-          <HintPath>$(EXILED_References)\UnityEngine.VideoModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.VirtualTexturingModule">
-          <HintPath>$(EXILED_References)\UnityEngine.VirtualTexturingModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.VRModule">
-          <HintPath>$(EXILED_References)\UnityEngine.VRModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.WindModule">
-          <HintPath>$(EXILED_References)\UnityEngine.WindModule.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.XRModule">
-          <HintPath>$(EXILED_References)\UnityEngine.XRModule.dll</HintPath>
-        </Reference>
-        <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
-          <HintPath>..\packages\EXILED.8.2.1\lib\net48\YamlDotNet.dll</HintPath>
-        </Reference>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="Components\PrimitiveInteractible.cs" />
-        <Compile Include="EventArgs\DamagingVehicleEventArgs.cs" />
-        <Compile Include="EventArgs\DestroyingVehicleEventArgs.cs" />
-        <Compile Include="EventArgs\EnteringVehicleEventArgs.cs" />
-        <Compile Include="EventArgs\LeavingVehicleEventArgs.cs" />
-        <Compile Include="EventArgs\ReloadingVehicleEventArgs.cs" />
-        <Compile Include="EventArgs\RepairingVehicleEventArgs.cs" />
-        <Compile Include="EventArgs\SpawningVehicleEventArgs.cs" />
-        <Compile Include="EventArgs\StartingVehicleEventArgs.cs" />
-        <Compile Include="EventHandlers.cs" />
-        <Compile Include="Events.cs" />
-        <Compile Include="Extensions\AbstractedTypeExtensions.cs" />
-        <Compile Include="Extensions\BitwiseExtensions.cs" />
-        <Compile Include="Interfaces\IRemoteControlledVehicle.cs" />
-        <Compile Include="Interfaces\RcVehicle.cs" />
-        <Compile Include="Interfaces\Vehicle.cs" />
-        <Compile Include="Interfaces\VehicleObject.cs" />
-        <Compile Include="RCConfig.cs" />
-        <Compile Include="RCPlugin.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="RCTranslation.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="App.config" />
-      <None Include="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Content Include="..\.gitignore">
-        <Link>.gitignore</Link>
-      </Content>
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
-    <Target Name="AfterBuild">
-    </Target>
-    -->
-
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <AssemblyTitle>RCVehicles</AssemblyTitle>
+    <Product>RCVehicles</Product>
+    <Copyright>Copyright © 2023</Copyright>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="EXILED" Version="8.2.1" />
+    <PackageReference Include="Lib.Harmony" Version="2.2.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CommandSystem.Core" HintPath="$(EXILED_References)\CommandSystem.Core.dll" />
+    <Reference Include="MapEditorReborn" HintPath="$(EXILED_References)\MapEditorReborn.dll" />
+    <Reference Include="Mirror" HintPath="$(EXILED_References)\Mirror-Publicized.dll" />
+    <Reference Include="NorthwoodLib" HintPath="$(EXILED_References)\NorthwoodLib.dll" />
+    <Reference Include="NWAPIPermissionSystem" HintPath="$(EXILED_References)\NWAPIPermissionSystem.dll" />
+    <Reference Include="Pooling" HintPath="$(EXILED_References)\Pooling.dll" />
+    <Reference Include="SCPSLAudioApi" HintPath="$(EXILED_References)\SCPSLAudioApi.dll" />
+    <Reference Include="System.ComponentModel.DataAnnotations" HintPath="$(EXILED_References)\System.ComponentModel.DataAnnotations.dll" />
+    <Reference Include="UnityEngine" HintPath="$(EXILED_References)\UnityEngine.dll" />
+    <Reference Include="UnityEngine.AccessibilityModule" HintPath="$(EXILED_References)\UnityEngine.AccessibilityModule.dll" />
+    <Reference Include="UnityEngine.AIModule" HintPath="$(EXILED_References)\UnityEngine.AIModule.dll" />
+    <Reference Include="UnityEngine.AndroidJNIModule" HintPath="$(EXILED_References)\UnityEngine.AndroidJNIModule.dll" />
+    <Reference Include="UnityEngine.AnimationModule" HintPath="$(EXILED_References)\UnityEngine.AnimationModule.dll" />
+    <Reference Include="UnityEngine.AssetBundleModule" HintPath="$(EXILED_References)\UnityEngine.AssetBundleModule.dll" />
+    <Reference Include="UnityEngine.AudioModule" HintPath="$(EXILED_References)\UnityEngine.AudioModule.dll" />
+    <Reference Include="UnityEngine.ClothModule" HintPath="$(EXILED_References)\UnityEngine.ClothModule.dll" />
+    <Reference Include="UnityEngine.ClusterInputModule" HintPath="$(EXILED_References)\UnityEngine.ClusterInputModule.dll" />
+    <Reference Include="UnityEngine.ClusterRendererModule" HintPath="$(EXILED_References)\UnityEngine.ClusterRendererModule.dll" />
+    <Reference Include="UnityEngine.CoreModule" HintPath="$(EXILED_References)\UnityEngine.CoreModule.dll" />
+    <Reference Include="UnityEngine.CrashReportingModule" HintPath="$(EXILED_References)\UnityEngine.CrashReportingModule.dll" />
+    <Reference Include="UnityEngine.DirectorModule" HintPath="$(EXILED_References)\UnityEngine.DirectorModule.dll" />
+    <Reference Include="UnityEngine.DSPGraphModule" HintPath="$(EXILED_References)\UnityEngine.DSPGraphModule.dll" />
+    <Reference Include="UnityEngine.GameCenterModule" HintPath="$(EXILED_References)\UnityEngine.GameCenterModule.dll" />
+    <Reference Include="UnityEngine.GIModule" HintPath="$(EXILED_References)\UnityEngine.GIModule.dll" />
+    <Reference Include="UnityEngine.GridModule" HintPath="$(EXILED_References)\UnityEngine.GridModule.dll" />
+    <Reference Include="UnityEngine.HotReloadModule" HintPath="$(EXILED_References)\UnityEngine.HotReloadModule.dll" />
+    <Reference Include="UnityEngine.ImageConversionModule" HintPath="$(EXILED_References)\UnityEngine.ImageConversionModule.dll" />
+    <Reference Include="UnityEngine.InputLegacyModule" HintPath="$(EXILED_References)\UnityEngine.InputLegacyModule.dll" />
+    <Reference Include="UnityEngine.InputModule" HintPath="$(EXILED_References)\UnityEngine.InputModule.dll" />
+    <Reference Include="UnityEngine.JSONSerializeModule" HintPath="$(EXILED_References)\UnityEngine.JSONSerializeModule.dll" />
+    <Reference Include="UnityEngine.LocalizationModule" HintPath="$(EXILED_References)\UnityEngine.LocalizationModule.dll" />
+    <Reference Include="UnityEngine.ParticleSystemModule" HintPath="$(EXILED_References)\UnityEngine.ParticleSystemModule.dll" />
+    <Reference Include="UnityEngine.PerformanceReportingModule" HintPath="$(EXILED_References)\UnityEngine.PerformanceReportingModule.dll" />
+    <Reference Include="UnityEngine.Physics2DModule" HintPath="$(EXILED_References)\UnityEngine.Physics2DModule.dll" />
+    <Reference Include="UnityEngine.PhysicsModule" HintPath="$(EXILED_References)\UnityEngine.PhysicsModule.dll" />
+    <Reference Include="UnityEngine.ProfilerModule" HintPath="$(EXILED_References)\UnityEngine.ProfilerModule.dll" />
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule" HintPath="$(EXILED_References)\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll" />
+    <Reference Include="UnityEngine.ScreenCaptureModule" HintPath="$(EXILED_References)\UnityEngine.ScreenCaptureModule.dll" />
+    <Reference Include="UnityEngine.SharedInternalsModule" HintPath="$(EXILED_References)\UnityEngine.SharedInternalsModule.dll" />
+    <Reference Include="UnityEngine.SpriteMaskModule" HintPath="$(EXILED_References)\UnityEngine.SpriteMaskModule.dll" />
+    <Reference Include="UnityEngine.SpriteShapeModule" HintPath="$(EXILED_References)\UnityEngine.SpriteShapeModule.dll" />
+    <Reference Include="UnityEngine.StreamingModule" HintPath="$(EXILED_References)\UnityEngine.StreamingModule.dll" />
+    <Reference Include="UnityEngine.SubstanceModule" HintPath="$(EXILED_References)\UnityEngine.SubstanceModule.dll" />
+    <Reference Include="UnityEngine.SubsystemsModule" HintPath="$(EXILED_References)\UnityEngine.SubsystemsModule.dll" />
+    <Reference Include="UnityEngine.TerrainModule" HintPath="$(EXILED_References)\UnityEngine.TerrainModule.dll" />
+    <Reference Include="UnityEngine.TerrainPhysicsModule" HintPath="$(EXILED_References)\UnityEngine.TerrainPhysicsModule.dll" />
+    <Reference Include="UnityEngine.TextCoreFontEngineModule" HintPath="$(EXILED_References)\UnityEngine.TextCoreFontEngineModule.dll" />
+    <Reference Include="UnityEngine.TextCoreTextEngineModule" HintPath="$(EXILED_References)\UnityEngine.TextCoreTextEngineModule.dll" />
+    <Reference Include="UnityEngine.TextRenderingModule" HintPath="$(EXILED_References)\UnityEngine.TextRenderingModule.dll" />
+    <Reference Include="UnityEngine.TilemapModule" HintPath="$(EXILED_References)\UnityEngine.TilemapModule.dll" />
+    <Reference Include="UnityEngine.TLSModule" HintPath="$(EXILED_References)\UnityEngine.TLSModule.dll" />
+    <Reference Include="UnityEngine.UI" HintPath="$(EXILED_References)\UnityEngine.UI.dll" />
+    <Reference Include="UnityEngine.UIElementsModule" HintPath="$(EXILED_References)\UnityEngine.UIElementsModule.dll" />
+    <Reference Include="UnityEngine.UIElementsNativeModule" HintPath="$(EXILED_References)\UnityEngine.UIElementsNativeModule.dll" />
+    <Reference Include="UnityEngine.UIModule" HintPath="$(EXILED_References)\UnityEngine.UIModule.dll" />
+    <Reference Include="UnityEngine.UmbraModule" HintPath="$(EXILED_References)\UnityEngine.UmbraModule.dll" />
+    <Reference Include="UnityEngine.UNETModule" HintPath="$(EXILED_References)\UnityEngine.UNETModule.dll" />
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule" HintPath="$(EXILED_References)\UnityEngine.UnityAnalyticsCommonModule.dll" />
+    <Reference Include="UnityEngine.UnityAnalyticsModule" HintPath="$(EXILED_References)\UnityEngine.UnityAnalyticsModule.dll" />
+    <Reference Include="UnityEngine.UnityConnectModule" HintPath="$(EXILED_References)\UnityEngine.UnityConnectModule.dll" />
+    <Reference Include="UnityEngine.UnityCurlModule" HintPath="$(EXILED_References)\UnityEngine.UnityCurlModule.dll" />
+    <Reference Include="UnityEngine.UnityTestProtocolModule" HintPath="$(EXILED_References)\UnityEngine.UnityTestProtocolModule.dll" />
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule" HintPath="$(EXILED_References)\UnityEngine.UnityWebRequestAssetBundleModule.dll" />
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule" HintPath="$(EXILED_References)\UnityEngine.UnityWebRequestAudioModule.dll" />
+    <Reference Include="UnityEngine.UnityWebRequestModule" HintPath="$(EXILED_References)\UnityEngine.UnityWebRequestModule.dll" />
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule" HintPath="$(EXILED_References)\UnityEngine.UnityWebRequestTextureModule.dll" />
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule" HintPath="$(EXILED_References)\UnityEngine.UnityWebRequestWWWModule.dll" />
+    <Reference Include="UnityEngine.VehiclesModule" HintPath="$(EXILED_References)\UnityEngine.VehiclesModule.dll" />
+    <Reference Include="UnityEngine.VFXModule" HintPath="$(EXILED_References)\UnityEngine.VFXModule.dll" />
+    <Reference Include="UnityEngine.VideoModule" HintPath="$(EXILED_References)\UnityEngine.VideoModule.dll" />
+    <Reference Include="UnityEngine.VirtualTexturingModule" HintPath="$(EXILED_References)\UnityEngine.VirtualTexturingModule.dll" />
+    <Reference Include="UnityEngine.VRModule" HintPath="$(EXILED_References)\UnityEngine.VRModule.dll" />
+    <Reference Include="UnityEngine.WindModule" HintPath="$(EXILED_References)\UnityEngine.WindModule.dll" />
+    <Reference Include="UnityEngine.XRModule" HintPath="$(EXILED_References)\UnityEngine.XRModule.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\.gitignore">
+      <Link>.gitignore</Link>
+    </Content>
+  </ItemGroup>
 </Project>
