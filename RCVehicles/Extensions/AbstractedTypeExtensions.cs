@@ -60,7 +60,7 @@ public static class AbstractedTypeExtensions
                         {
                             instance = Convert.ChangeType(instance, type);
                         }
-                        catch (Exception e)
+                        catch (Exception)
                         {
                             continue;
                         }

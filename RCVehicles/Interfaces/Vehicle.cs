@@ -142,8 +142,10 @@ namespace RCVehicles.Interfaces
                 return;
             }
             
+            // Create the vehicle bject.
+            var vehicle = new VehicleObject(this, ply);
             // Load the schematic
-            LoadSchematic();
+            
             
             // Does the player "become vehicle"
             if (this is IRemoteControlledVehicle rc)
