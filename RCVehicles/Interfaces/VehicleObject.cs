@@ -10,12 +10,11 @@
 //    Created Date:     09/26/2023 2:13 PM
 // -----------------------------------------
 
+namespace RCVehicles.Interfaces;
 using System.Collections.Generic;
 using Exiled.API.Features;
 using MapEditorReborn.API.Features.Objects;
 using UnityEngine;
-
-namespace RCVehicles.Interfaces;
 
 public class VehicleObject
 {

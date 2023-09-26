@@ -10,13 +10,12 @@
 //    Created Date:     09/26/2023 12:25 AM
 // -----------------------------------------
 
+namespace RCVehicles.EventArgs;
 using Exiled.API.Features;
 using Exiled.API.Features.DamageHandlers;
 using Exiled.Events.EventArgs.Interfaces;
 using Exiled.Events.Features;
 using RCVehicles.Interfaces;
-
-namespace RCVehicles.EventArgs;
 
 public class DestroyingVehicleEventArgs : Event, IDeniableEvent, IAttackerEvent
 {

@@ -1,11 +1,11 @@
-﻿using System;
-using Exiled.API.Enums;
-using Exiled.API.Features;
-using HarmonyLib;
-using RCVehicles.Interfaces;
-
-namespace RCVehicles
+﻿namespace RCVehicles
 {
+    using System;
+    using Exiled.API.Enums;
+    using Exiled.API.Features;
+    using HarmonyLib;
+    using RCVehicles.Interfaces;
+
     public class RCPlugin : Plugin<RCConfig, RCTranslation>
     {
         public override string Author => "Redforce04";

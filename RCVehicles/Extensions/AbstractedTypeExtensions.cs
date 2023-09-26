@@ -10,12 +10,11 @@
 //    Created Date:     09/26/2023 2:41 PM
 // -----------------------------------------
 
+namespace RCVehicles.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-
-namespace RCVehicles.Extensions;
 
 public static class AbstractedTypeExtensions
 {

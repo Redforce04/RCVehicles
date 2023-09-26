@@ -10,19 +10,14 @@
 //    Created Date:     09/26/2023 12:01 AM
 // -----------------------------------------
 
-using System.Collections.Generic;
-using System.Linq;
-using Exiled.API.Features;
-using Exiled.Events.Features;
-using MapEditorReborn.API.Features.Objects;
-using MapEditorReborn.API.Features.Serializable;
-using MapEditorReborn.Events.Handlers;
-using RCVehicles.EventArgs;
-using RCVehicles.Extensions;
-using MapEditorObject = MapEditorReborn.Events.Handlers.MapEditorObject;
-
 namespace RCVehicles.Interfaces
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using Exiled.API.Features;
+    using MapEditorReborn.API.Features.Serializable;
+    using RCVehicles.EventArgs;
+
     /// <summary>
     /// The base class for defining a vehicle.
     /// </summary>
