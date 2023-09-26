@@ -28,6 +28,11 @@ public class Events
     public static Event<StartingVehicleEventArgs> StartingVehicle { get; set; } = new();
     
     /// <summary>
+    /// Invoked when a <see cref="Exiled.API.Features.Player"/> attempts to enter a vehicle.
+    /// </summary>
+    public static Event<EnteringVehicleEventArgs> EnteringVehicle { get; set; } = new();
+    
+    /// <summary>
     /// Invoked when a <see cref="Exiled.API.Features.Player"/> attempts to leave a vehicle.
     /// </summary>
     public static Event<LeavingVehicleEventArgs> LeavingVehicle { get; set; } = new();
@@ -40,7 +45,7 @@ public class Events
     /// <summary>
     /// Invoked when a <see cref="Exiled.API.Features.Player"/> attempts to reload a vehicle.
     /// </summary>
-    public static Event<RepairingVehicleEventArgs> ReloadingVehicle { get; set; } = new();
+    public static Event<ReloadingVehicleEventArgs> ReloadingVehicle { get; set; } = new();
     
     /// <summary>
     /// Invoked when a <see cref="Exiled.API.Features.Player"/> attempts to damage a vehicle.
@@ -63,6 +68,12 @@ public class Events
     /// </summary>
     /// <param name="ev">The <see cref="StartingVehicleEventArgs"/> instance.</param>
     public static void OnStartingVehicle(StartingVehicleEventArgs ev) => StartingVehicle.InvokeSafely(ev);
+    
+    /// <summary>
+    /// Called when <see cref="Exiled.API.Features.Player"/> attempts to enter a vehicle.
+    /// </summary>
+    /// <param name="ev">The <see cref="EnteringVehicleEventArgs"/> instance.</param>
+    public static void OnEnteringingVehicle(EnteringVehicleEventArgs ev) => EnteringVehicle.InvokeSafely(ev);
     
     /// <summary>
     /// Called when <see cref="Exiled.API.Features.Player"/> attempts to leave a vehicle.

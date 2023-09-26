@@ -17,5 +17,8 @@ namespace RCVehicles.Interfaces;
 /// </summary>
 public interface IRemoteControlledVehicle
 {
+    /// <summary>
+    /// Any information pertaining to the <see cref="RcVehicle"/> features.
+    /// </summary>
     public RcVehicle RcVehicle { get; set; }
 }
