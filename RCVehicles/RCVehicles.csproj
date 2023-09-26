@@ -34,13 +34,13 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="0Harmony">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\0Harmony.dll</HintPath>
+          <HintPath>$(EXILED_References)\0Harmony.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
           <HintPath>..\packages\EXILED.8.2.1\lib\net48\Assembly-CSharp-Publicized.dll</HintPath>
         </Reference>
         <Reference Include="CommandSystem.Core">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\CommandSystem.Core.dll</HintPath>
+          <HintPath>$(EXILED_References)\CommandSystem.Core.dll</HintPath>
         </Reference>
         <Reference Include="CommandSystem.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
           <HintPath>..\packages\EXILED.8.2.1\lib\net48\CommandSystem.Core.dll</HintPath>
@@ -70,239 +70,239 @@
           <HintPath>..\packages\EXILED.8.2.1\lib\net48\Exiled.Updater.dll</HintPath>
         </Reference>
         <Reference Include="MapEditorReborn">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\MapEditorReborn.dll</HintPath>
+          <HintPath>$(EXILED_References)\MapEditorReborn.dll</HintPath>
         </Reference>
         <Reference Include="Mirror">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\Mirror-Publicized.dll</HintPath>
+          <HintPath>$(EXILED_References)\Mirror-Publicized.dll</HintPath>
         </Reference>
         <Reference Include="NorthwoodLib">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\NorthwoodLib.dll</HintPath>
+          <HintPath>$(EXILED_References)\NorthwoodLib.dll</HintPath>
         </Reference>
         <Reference Include="NorthwoodLib, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
           <HintPath>..\packages\EXILED.8.2.1\lib\net48\NorthwoodLib.dll</HintPath>
         </Reference>
         <Reference Include="NWAPIPermissionSystem">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\NWAPIPermissionSystem.dll</HintPath>
+          <HintPath>$(EXILED_References)\NWAPIPermissionSystem.dll</HintPath>
         </Reference>
         <Reference Include="PluginAPI, Version=12.0.0.0, Culture=neutral, processorArchitecture=Amd64">
           <HintPath>..\packages\EXILED.8.2.1\lib\net48\PluginAPI.dll</HintPath>
         </Reference>
         <Reference Include="Pooling">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\Pooling.dll</HintPath>
+          <HintPath>$(EXILED_References)\Pooling.dll</HintPath>
         </Reference>
         <Reference Include="SCPSLAudioApi">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\SCPSLAudioApi.dll</HintPath>
+          <HintPath>$(EXILED_References)\SCPSLAudioApi.dll</HintPath>
         </Reference>
         <Reference Include="SemanticVersioning">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\SemanticVersioning.dll</HintPath>
+          <HintPath>$(EXILED_References)\SemanticVersioning.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.ComponentModel.DataAnnotations">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\System.ComponentModel.DataAnnotations.dll</HintPath>
+          <HintPath>$(EXILED_References)\System.ComponentModel.DataAnnotations.dll</HintPath>
         </Reference>
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
         <Reference Include="System.Xml" />
         <Reference Include="UnityEngine">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.AccessibilityModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.AccessibilityModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.AccessibilityModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.AIModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.AIModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.AIModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.AndroidJNIModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.AndroidJNIModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.AndroidJNIModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.AnimationModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.AnimationModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.AnimationModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.AssetBundleModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.AssetBundleModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.AssetBundleModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.AudioModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.AudioModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.AudioModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.ClothModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.ClothModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.ClothModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.ClusterInputModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.ClusterInputModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.ClusterInputModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.ClusterRendererModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.ClusterRendererModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.ClusterRendererModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.CoreModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CrashReportingModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.CrashReportingModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.CrashReportingModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.DirectorModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.DirectorModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.DirectorModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.DSPGraphModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.DSPGraphModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.DSPGraphModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.GameCenterModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.GameCenterModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.GameCenterModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.GIModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.GIModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.GIModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.GridModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.GridModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.GridModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.HotReloadModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.HotReloadModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.HotReloadModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.ImageConversionModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.ImageConversionModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.ImageConversionModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.IMGUIModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.IMGUIModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.IMGUIModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.InputLegacyModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.InputLegacyModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.InputLegacyModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.InputModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.InputModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.InputModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.JSONSerializeModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.JSONSerializeModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.JSONSerializeModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.LocalizationModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.LocalizationModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.LocalizationModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.ParticleSystemModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.ParticleSystemModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.ParticleSystemModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.PerformanceReportingModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.PerformanceReportingModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.PerformanceReportingModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.Physics2DModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.Physics2DModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.Physics2DModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.PhysicsModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.PhysicsModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.PhysicsModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.ProfilerModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.ProfilerModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.ProfilerModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.ScreenCaptureModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.ScreenCaptureModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.ScreenCaptureModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.SharedInternalsModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.SharedInternalsModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.SharedInternalsModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.SpriteMaskModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.SpriteMaskModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.SpriteMaskModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.SpriteShapeModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.SpriteShapeModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.SpriteShapeModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.StreamingModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.StreamingModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.StreamingModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.SubstanceModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.SubstanceModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.SubstanceModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.SubsystemsModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.SubsystemsModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.SubsystemsModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TerrainModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.TerrainModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.TerrainModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TerrainPhysicsModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.TerrainPhysicsModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TextCoreFontEngineModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TextCoreTextEngineModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TextRenderingModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.TextRenderingModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.TextRenderingModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TilemapModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.TilemapModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.TilemapModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.TLSModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.TLSModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.TLSModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UI">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UI.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UI.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UIElementsModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UIElementsModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UIElementsModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UIElementsNativeModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UIElementsNativeModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UIElementsNativeModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UIModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UIModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UIModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UmbraModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UmbraModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UmbraModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UNETModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UNETModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UNETModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UnityAnalyticsModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UnityAnalyticsModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UnityConnectModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UnityConnectModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UnityConnectModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UnityCurlModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UnityCurlModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UnityCurlModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UnityTestProtocolModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UnityTestProtocolModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UnityWebRequestModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UnityWebRequestModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UnityWebRequestModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.VehiclesModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.VehiclesModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.VehiclesModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.VFXModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.VFXModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.VFXModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.VideoModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.VideoModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.VideoModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.VirtualTexturingModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.VirtualTexturingModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.VirtualTexturingModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.VRModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.VRModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.VRModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.WindModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.WindModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.WindModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.XRModule">
-          <HintPath>..\..\..\OneDrive\Documents\SCP Plugin\ExiledReferences\UnityEngine.XRModule.dll</HintPath>
+          <HintPath>$(EXILED_References)\UnityEngine.XRModule.dll</HintPath>
         </Reference>
         <Reference Include="YamlDotNet, Version=11.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
           <HintPath>..\packages\EXILED.8.2.1\lib\net48\YamlDotNet.dll</HintPath>
@@ -320,6 +320,7 @@
         <Compile Include="Interfaces\IRemoteControlledVehicle.cs" />
         <Compile Include="Interfaces\RcVehicle.cs" />
         <Compile Include="Interfaces\Vehicle.cs" />
+        <Compile Include="Interfaces\VehicleObject.cs" />
         <Compile Include="RCConfig.cs" />
         <Compile Include="RCPlugin.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
