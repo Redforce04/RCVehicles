@@ -1,17 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <LangVersion>preview</LangVersion>
+    <LangVersion>latest</LangVersion>
     <AssemblyTitle>RCVehicles</AssemblyTitle>
     <Product>RCVehicles</Product>
     <Copyright>Copyright © 2023</Copyright>
     <OutputPath>bin\$(Configuration)\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>full</DebugType>
+    <Nullable>enable</Nullable>
+    <Configurations>Release</Configurations>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="EXILED" Version="8.2.1" />
@@ -97,11 +97,5 @@
     <Content Include="..\.gitignore">
       <Link>.gitignore</Link>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <EditorConfigFiles Remove="C:\Users\Zereth\source\repos\RCVehicles\RCVehicles\.editorconfig" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="C:\Users\Zereth\source\repos\RCVehicles\RCVehicles\.editorconfig" />
   </ItemGroup>
 </Project>

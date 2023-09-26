@@ -26,7 +26,7 @@ public static class AbstractedTypeExtensions
         where T : class
     {
         Type type = typeof(T);
-        List<T> instanceList = [];
+        List<T> instanceList = new List<T>();
 
         foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
         {
@@ -49,11 +49,13 @@ public static class AbstractedTypeExtensions
                     }
                     catch
                     {
+                        //
                     }
                 }
             }
             catch
             {
+                //
             }
         }
 
