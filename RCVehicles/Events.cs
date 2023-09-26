@@ -10,10 +10,9 @@
 //    Created Date:     09/26/2023 12:22 AM
 // -----------------------------------------
 
+namespace RCVehicles;
 using Exiled.Events.Features;
 using RCVehicles.EventArgs;
-
-namespace RCVehicles;
 
 public class Events
 {

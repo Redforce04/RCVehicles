@@ -10,10 +10,9 @@
 //    Created Date:     09/26/2023 12:51 AM
 // -----------------------------------------
 
+namespace RCVehicles.Interfaces;
 using System.Collections.Generic;
 using Exiled.API.Features;
-
-namespace RCVehicles.Interfaces;
 
 public class RcVehicle
 {

@@ -10,9 +10,9 @@
 //    Created Date:     09/19/2023 3:42 PM
 // -----------------------------------------
 
+namespace RCVehicles.Extensions;
 using System;
 using System.Globalization;
-namespace RCVehicles.Extensions;
 
 public static class BitwiseExtensions
 {

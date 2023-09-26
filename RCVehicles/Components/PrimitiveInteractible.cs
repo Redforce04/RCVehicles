@@ -10,11 +10,10 @@
 //    Created Date:     09/26/2023 2:39 PM
 // -----------------------------------------
 
+namespace RCVehicles.Components;
 using Interactables;
 using Interactables.Verification;
 using Mirror;
-
-namespace RCVehicles.Components;
 
 public class PrimitiveInteractible : NetworkBehaviour, IInteractable
 {

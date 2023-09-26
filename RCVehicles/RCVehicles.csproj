@@ -98,4 +98,10 @@
       <Link>.gitignore</Link>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\Zereth\source\repos\RCVehicles\RCVehicles\.editorconfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Zereth\source\repos\RCVehicles\RCVehicles\.editorconfig" />
+  </ItemGroup>
 </Project>

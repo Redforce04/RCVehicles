@@ -10,10 +10,10 @@
 //    Created Date:     09/25/2023 11:53 PM
 // -----------------------------------------
 
-using Exiled.API.Interfaces;
-
 namespace RCVehicles
 {
+    using Exiled.API.Interfaces;
+
     public class RCConfig : IConfig
     {
         public bool IsEnabled { get; set; }

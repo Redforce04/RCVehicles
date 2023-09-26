@@ -10,13 +10,13 @@
 //    Created Date:     09/26/2023 12:12 AM
 // -----------------------------------------
 
-using Exiled.API.Features;
-using Exiled.Events.EventArgs.Interfaces;
-using RCVehicles.Interfaces;
-using Event = Exiled.Events.Features.Event;
-
 namespace RCVehicles.EventArgs
 {
+    using Exiled.API.Features;
+    using Exiled.Events.EventArgs.Interfaces;
+    using RCVehicles.Interfaces;
+    using Event = Exiled.Events.Features.Event;
+
     public class SpawningVehicleEventArgs : Event, IDeniableEvent, IPlayerEvent
     {
         /// <summary>
