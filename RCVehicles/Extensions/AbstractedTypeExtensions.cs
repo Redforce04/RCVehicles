@@ -40,10 +40,16 @@ public static class AbstractedTypeExtensions
                     if (!typeInstance.IsSubclassOf(type))
                         continue;
 
-                    if (Activator.CreateInstance(typeInstance) is not T instance)
-                        continue;
+                    try
+                    {
+                        if (Activator.CreateInstance(typeInstance) is not T instance)
+                            continue;
 
-                    instanceList.Add(instance);
+                        instanceList.Add(instance);
+                    }
+                    catch
+                    {
+                    }
                 }
             }
             catch
