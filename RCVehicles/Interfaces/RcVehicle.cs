@@ -39,6 +39,7 @@ public class RcVehicle
     /// <param name="ply"></param>
     public void SpawnNPCForPlayer(Player ply)
     {
+        Log.Debug($"Spawning NPC for Player {ply}.");
         // check for npc death, player death, player leave, etc...
         Npc npc = Npc.Spawn($"{(ply.HasCustomName ? ply.CustomName : ply.Nickname)}*", ply.Role, 0, "", ply.Position);
         npc.Transform.rotation = ply.Transform.rotation;

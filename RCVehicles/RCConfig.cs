@@ -12,11 +12,14 @@
 
 namespace RCVehicles
 {
+    using System.IO;
     using Exiled.API.Interfaces;
 
     public class RCConfig : IConfig
     {
-        public bool IsEnabled { get; set; }
-        public bool Debug { get; set; }
+        public bool IsEnabled { get; set; } = true;
+
+        public bool Debug { get; set; } = false;
+        // public string SchematicLocation { get; set; } = Path.Combine(Exiled.API.Features.Paths.Configs, "RCVehicles", "Schematics");
     }
 }

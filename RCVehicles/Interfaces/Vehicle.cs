@@ -38,6 +38,12 @@ namespace RCVehicles.Interfaces
         public static void RegisterAllVehicles()
         {
             RegisteredVehicles = Extensions.AbstractedTypeExtensions.InstantiateAllInstancesOfType<Vehicle>();
+            Log.Info($"Loaded {RegisteredVehicles.Count} vehicles.");
+        }
+
+        public static Vehicle? Get(string vehicleName)
+        {
+            return RegisteredVehicles.FirstOrDefault(x => x.Name.ToLower().Contains(vehicleName.ToLower()));
         }
     #endregion
 #endregion
@@ -45,12 +51,17 @@ namespace RCVehicles.Interfaces
         /// <summary>
         /// The name of the vehicle.
         /// </summary>
-        public string Name { get; set; }
+        public abstract string Name { get; }
+
+        /// <summary>
+        /// A description of the vehicle.
+        /// </summary>
+        public abstract string Description { get; }
         
         /// <summary>
         /// The author of the vehicle.
         /// </summary>
-        public string Author { get; set; }
+        public abstract string Author { get; }
 
         /// <summary>
         /// The name of the schematic to load.
@@ -62,6 +73,7 @@ namespace RCVehicles.Interfaces
         /// </summary>
         public virtual SchematicSerializable Schematic => new SchematicSerializable(this.SchematicName);
 
+
         /// <summary>
         /// How many players can be inside the vehicle.
         /// </summary>
@@ -69,7 +81,7 @@ namespace RCVehicles.Interfaces
         
 
         /// <summary>
-        /// Allows or denies a player from entering a vehicle.
+        /// Checks whether a player is allowed to enter a vehicle.
         /// </summary>
         /// <param name="vehicleObject">The instance of the <see cref="VehicleObject"/> that the player is trying to enter.</param>
         /// <param name="ply">The <see cref="Player"/> trying to enter the vehicle.</param>
@@ -107,8 +119,8 @@ namespace RCVehicles.Interfaces
         /// </summary>
         /// <param name="vehicleObject">The instance of the <see cref="VehicleObject"/> that is being entered.</param>
         /// <param name="ply">The <see cref="Player"/> who is attempting to enter the vehicle.</param>
-        /// <returns></returns>
-        protected virtual bool PlayerIsAbleToEnterVehicle(VehicleObject vehicleObject, Player ply)
+        /// <returns>True if the player is allowed to enter the vehicle. False if the player is not allowed to enter the vehicle.</returns>
+        protected virtual bool IsPlayerAllowedToEnterVehicle(VehicleObject vehicleObject, Player ply)
         {
             return true;
         }
@@ -116,8 +128,9 @@ namespace RCVehicles.Interfaces
         /// <summary>
         /// Spawns the vehicle.
         /// </summary>
-        public void SpawnVehicle(Player ply = null)
+        public VehicleObject? SpawnVehicle(Player? ply = null)
         {
+            Log.Debug("Spawning Vehicle.");
             // Null player means that the server is the owner.
             if (ply is null)
             {
@@ -126,7 +139,7 @@ namespace RCVehicles.Interfaces
             // Does player need prereqs to spawn the vehicle?
             if (!IsPlayerAllowedToSpawnVehicle())
             {
-                return;
+                return null;
             }
             
             // Call an event to see if the player is allowed to spawn the vehicle.
@@ -134,12 +147,13 @@ namespace RCVehicles.Interfaces
             Events.OnSpawningVehicle(ev);
             if (!ev.IsAllowed)
             {
-                return;
+                return null;
             }
             
             // Create the vehicle bject.
             var vehicle = new VehicleObject(this, ply);
             // Load the schematic
+            
             
             
             // Does the player "become vehicle"
@@ -152,11 +166,53 @@ namespace RCVehicles.Interfaces
             }
             
             // Does a broadcast need to be issued?
+            return vehicle;
+        }
+        
+        /// <summary>
+        /// Checks whether a player is allowed to spawn a vehicle.
+        /// </summary>
+        /// <param name="ply">The <see cref="Player"/> trying to spawn the vehicle.</param>
+        /// <returns>True if the player can spawn the vehicle. False if the player is unable to spawn the vehicle.</returns>
+        public bool CanPlayerSpawnVehicle(Player ply = null)
+        {
+            // Ensure player is actually a player
+            if (ply.IsNPC || ply.IsHost)
+                return false;
+            
+            // Ensure player is not in any other vehicles or owns any other vehicles.
+            if (VehicleObject.VehicleObjectInstances.Any(vehicle => 
+                    vehicle.PlayersRidingVehicle.Contains(ply) || vehicle.Owner == ply))
+                return false;
+            
+            // Ensure the vehicle doesnt have custom logic.
+            if (!IsPlayerAllowedToSpawnVehicle(ply))
+                return false;
+
+            // Run the event
+            SpawningVehicleEventArgs ev = new SpawningVehicleEventArgs(ply, this);
+            Events.OnSpawningVehicle(ev);
+            if (!ev.IsAllowed)
+                return false;
+            
+            return true;
         }
 
+        /// <summary>
+        /// Can be used to prevent players from spawning a vehicle.
+        /// </summary>
+        /// <param name="ply">The <see cref="Player"/> who is attempting to spawning the vehicle.</param>
+        /// <returns>True if the player is allowed to spawn the vehicle. False if the player is not allowed to spawn the vehicle.</returns>
         protected virtual bool IsPlayerAllowedToSpawnVehicle(Player ply = null)
         {
             return true;
+        }
+        /// <summary>
+        /// Called when the vehicle is spawned.
+        /// </summary>
+        protected virtual void SpawningVehicle()
+        {
+            
         }
 #endregion
     }

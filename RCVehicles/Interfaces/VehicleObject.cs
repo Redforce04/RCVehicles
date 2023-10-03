@@ -39,6 +39,25 @@ public class VehicleObject
     internal VehicleObject(Vehicle vehicle, Player ply)
     {
         BaseVehicle = vehicle;
+        Owner = ply;
+        _createAndSpawnVehicle();
+    }
+
+    public void RemoveVehicle()
+    {
+        this.Schematic.Destroy();
+        if (this.BaseVehicle is IRemoteControlledVehicle rc)
+        {
+            foreach (Player ply in this.PlayersRidingVehicle)
+            {
+                rc.RcVehicle.RemovePlayer(ply);
+            }
+        }
+    } 
+    
+    private void _createAndSpawnVehicle()
+    {
+        this.LoadSchematic(Owner.Position, Owner.Rotation);
     }
     
     /// <summary>
