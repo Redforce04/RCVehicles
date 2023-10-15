@@ -77,9 +77,34 @@ namespace RCVehicles.Interfaces
         /// <summary>
         /// How many players can be inside the vehicle.
         /// </summary>
-        public virtual int MaxPlayerCount { get; set; } = 1; 
-        
+        public virtual int MaxPlayerCount { get; set; } = 1;
 
+        /// <summary>
+        /// The mass of the object. Used for the rigidbody.
+        /// </summary>
+        public virtual float Mass { get; set; } = 1;
+        
+        /// <summary>
+        /// How fast the vehicle can turn.
+        /// </summary>
+        public virtual float MaxTurnSpeed { get; set; } = 1f;
+
+        /// <summary>
+        /// Can be used to change the orientation that is considered the front of the tank. (Typically in increments of 90: 0, 90, 180, or 270)
+        /// </summary>
+        public virtual float TurnOffset { get; set; } = 0;
+
+        public List<VehicleWeapon> VehicleWeapons { get; private set; } = new List<VehicleWeapon>();
+
+        /// <summary>
+        /// Registers a weapon to a vehicle.
+        /// </summary>
+        protected void RegisterWeapon(VehicleWeapon weapon)
+        {
+            weapon.BaseVehicle = this;
+            VehicleWeapons.Add(weapon);
+        }
+        
         /// <summary>
         /// Checks whether a player is allowed to enter a vehicle.
         /// </summary>
@@ -164,7 +189,8 @@ namespace RCVehicles.Interfaces
                     rc.RcVehicle.SpawnNPCForPlayer(ply);
                 }
             }
-            
+
+            SpawningVehicle();
             // Does a broadcast need to be issued?
             return vehicle;
         }

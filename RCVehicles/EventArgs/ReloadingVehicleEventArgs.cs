@@ -22,19 +22,19 @@ public class ReloadingVehicleEventArgs : Event, IDeniableEvent, IPlayerEvent
     /// Used to create an instance of <see cref="ReloadingVehicleEventArgs"/>
     /// </summary>
     /// <param name="player">The <see cref="Player"/> reloading the vehicle.</param>
-    /// <param name="vehicle">The <see cref="Vehicle"/> that is being reloaded.</param>
+    /// <param name="weapon">The <see cref="VehicleWeapon"/> that is being reloaded.</param>
     /// <param name="isAllowed">Whether the event is allowed to execute or not.</param>
-    public ReloadingVehicleEventArgs(Player player, Vehicle vehicle, bool isAllowed = true)
+    public ReloadingVehicleEventArgs(Player player, VehicleWeapon weapon, bool isAllowed = true)
     {
         Player = player;
-        Vehicle = vehicle;
+        Weapon = weapon;
         IsAllowed = isAllowed;
     }
     
     /// <summary>
     /// The vehicle being reloaded.
     /// </summary>
-    public Vehicle Vehicle { get; }
+    public VehicleWeapon Weapon { get; }
     
     /// <inheritdoc cref="IDeniableEvent.IsAllowed"/>
     public bool IsAllowed { get; set; }

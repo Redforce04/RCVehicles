@@ -12,6 +12,7 @@
 
 namespace RCVehicles
 {
+    using System.ComponentModel;
     using System.IO;
     using Exiled.API.Interfaces;
 
@@ -20,6 +21,16 @@ namespace RCVehicles
         public bool IsEnabled { get; set; } = true;
 
         public bool Debug { get; set; } = false;
-        // public string SchematicLocation { get; set; } = Path.Combine(Exiled.API.Features.Paths.Configs, "RCVehicles", "Schematics");
+        
+        [Description("The method of aiming to use. Available Modes: Raycast and Transform.")]
+        public AimMode AimMode { get; set; } = AimMode.Transform;
+    }
+
+    public enum AimMode
+    {
+        [Description("The vehicle will aim wherever the player aims.")]
+        Raycast,
+        [Description("The vehicle will aim in the same general direction as the player.")]
+        Transform
     }
 }

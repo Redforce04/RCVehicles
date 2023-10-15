@@ -4,10 +4,10 @@
 // -----------------------------------------
 //    Solution:         RCVehicles
 //    Project:          RCVehicles
-//    FileName:         VehicleParentCommand.cs
+//    FileName:         Debug.cs
 //    Author:           Redforce04#4091
-//    Revision Date:    09/26/2023 5:23 PM
-//    Created Date:     09/26/2023 5:23 PM
+//    Revision Date:    10/04/2023 1:28 PM
+//    Created Date:     10/04/2023 1:28 PM
 // -----------------------------------------
 
 namespace RCVehicles.Commands;
@@ -15,26 +15,22 @@ namespace RCVehicles.Commands;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using CommandSystem;
-using RCVehicles.Commands.VehicleCommands;
 
-[CommandHandler(typeof(RemoteAdminCommandHandler))]
-[CommandHandler(typeof(GameConsoleCommandHandler))]
-public class VehicleParentCommand : ParentCommand
+public class Debug : ParentCommand
 {
-    public override string Command => "vehicle";
-    public override string Description => "Allows for spawning and modifying vehicles.";
-    public override string[] Aliases => Array.Empty<string>();
-    
-    public VehicleParentCommand() => LoadGeneratedCommands();
+    public override string Command => "Debug";
+    public override string[] Aliases => new string[] { "dbg" };
+    public override string Description => "Debug functions for developers.";
+    public Debug() => LoadGeneratedCommands();
     public override void LoadGeneratedCommands()
     {
-        RegisterCommand(new List());
-        RegisterCommand(new Spawn());
-        RegisterCommand(new Remove());
-        RegisterCommand(new Debug());
+        RegisterCommand(new TurnMult());
+        RegisterCommand(new Mass());
+        RegisterCommand(new Control());
+        RegisterCommand(new Relational());
     }
 
-    protected override bool ExecuteParent(ArraySegment<string> arguments, ICommandSender sender, out string response)
+    protected override bool ExecuteParent(ArraySegment<string> arguments, ICommandSender sender, [UnscopedRef] out string response)
     {
         response = "Please enter a valid subcommand: \n";
 
@@ -56,4 +52,5 @@ public class VehicleParentCommand : ParentCommand
         }
         return false;
     }
+
 }

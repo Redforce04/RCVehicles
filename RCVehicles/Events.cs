@@ -55,6 +55,16 @@ public class Events
     /// Invoked when a <see cref="Exiled.API.Features.Player"/> attempts to destroy a vehicle.
     /// </summary>
     public static Event<DestroyingVehicleEventArgs> DestroyingVehicle { get; set; } = new();
+
+    /// <summary>
+    /// Invoked when a <see cref="Exiled.API.Features.Player"/> attempts to destroy a vehicle's weapon.
+    /// </summary>
+    public static Event<DestroyingWeaponEventArgs> DestroyingWeapon { get; set; } = new(); 
+    
+    /// <summary>
+    /// Invoked when a <see cref="Exiled.API.Features.Player"/> attempts to damage a vehicle's weapon.
+    /// </summary>
+    public static Event<DamagingWeaponEventArgs> DamagingWeapon { get; set; } = new();
     
     /// <summary>
     /// Called when <see cref="Exiled.API.Features.Player"/> attempts to spawn a vehicle.
@@ -103,4 +113,15 @@ public class Events
     /// </summary>
     /// <param name="ev">The <see cref="DestroyingVehicleEventArgs"/> instance.</param>
     public static void OnDestroyingVehicle(DestroyingVehicleEventArgs ev) => DestroyingVehicle.InvokeSafely(ev);
+    
+    /// <summary>
+    /// Called when <see cref="Exiled.API.Features.Player"/> attempts to destroy a vehicle's weapon.
+    /// </summary>
+    /// <param name="ev">The <see cref="DestroyingWeaponEventArgs"/> instance.</param>
+    public static void OnDestroyingWeapon(DestroyingWeaponEventArgs ev) => DestroyingWeapon.InvokeSafely(ev);
+    /// <summary>
+    /// Called when <see cref="Exiled.API.Features.Player"/> attempts to damage a vehicle's weapon.
+    /// </summary>
+    /// <param name="ev">The <see cref="DamagingWeaponEventArgs"/> instance.</param>
+    public static void OnDamagingWeapon(DamagingWeaponEventArgs ev) => DamagingWeapon.InvokeSafely(ev);
 }

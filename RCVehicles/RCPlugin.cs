@@ -2,6 +2,7 @@
 {
     using System;
     using System.IO;
+    using Components;
     using Exiled.API.Enums;
     using Exiled.API.Features;
     using HarmonyLib;
@@ -32,13 +33,14 @@
             
             EventHandlers = new EventHandlers();
             EventHandlers.RegisterEventHandlers();
-
             /*if (!Directory.Exists(Config.SchematicLocation))
             {
                 Directory.CreateDirectory(Config.SchematicLocation);
             }*/
             
             Vehicle.RegisterAllVehicles();
+            var unused = new VehicleController();
+            Log.Debug($"RC Vehicles Loaded. {Vehicle.RegisteredVehicles.Count} vehicles have been loaded.");
         }
 
         public override void OnDisabled()

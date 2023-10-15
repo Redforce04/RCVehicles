@@ -66,8 +66,8 @@ public class Spawn : ICommand, IUsageProvider
             response = $"Could not spawn vehicle {vehicle.Name}. Try checking console for more information.";
             return false;
         }
-        
-        response = $"Successfully spawned vehicle {vehicle.Name} for player {ply.Nickname}";
+        vehicleObject.SetDriver(ply);
+        response = $"Successfully spawned vehicle {vehicle.Name} for player {ply.Nickname}. (Vehicle Id: {vehicleObject.Id})";
         return true;
         
         showDefaultArgs:

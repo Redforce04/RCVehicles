@@ -17,9 +17,16 @@ using Interfaces;
 
 public class Tank : Vehicle
 {
+    public Tank()
+    {
+        RegisterWeapon(new TankWeapon());
+    }
     public override string Name => "Tank";
     public override string Description => "A big beefy tank to carry players along";
     public override string Author => "Redforce04 and Scout Trooper";
     public override string SchematicName => "Tank1";
     public override int MaxPlayerCount { get; set; } = 3;
+    public override float MaxTurnSpeed { get; set; } = 1;
+    public override float Mass { get; set; } = 50;
+    public override float TurnOffset { get; set; } = -90;
 }

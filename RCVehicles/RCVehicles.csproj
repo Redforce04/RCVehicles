@@ -18,6 +18,7 @@
     <PackageReference Include="Lib.Harmony" Version="2.2.2" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Assembly-CSharp-Firstpass" HintPath="$(EXILED_References)\Assembly-CSharp-Firstpass.dll" />
     <Reference Include="CommandSystem.Core" HintPath="$(EXILED_References)\CommandSystem.Core.dll" />
     <Reference Include="MapEditorReborn" HintPath="$(EXILED_References)\MapEditorReborn.dll" />
     <Reference Include="Mirror" HintPath="$(EXILED_References)\Mirror-Publicized.dll" />
@@ -97,5 +98,8 @@
     <Content Include="..\.gitignore">
       <Link>.gitignore</Link>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components" />
   </ItemGroup>
 </Project>
